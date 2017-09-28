@@ -9,7 +9,7 @@ var getElementsByClassName = function(className
 
   var results = [];
 
-  var searchDom = function(element){
+  var search = function(element){
 
     //check to see if current element has a classList, and if so, see if it contains the className
     if(element.classList && element.classList.contains(className)){
@@ -18,10 +18,10 @@ var getElementsByClassName = function(className
 
     //check the rest of it's children and then through the rest of the DOM
     for(var i = 0; i < element.childNodes.length; i++){
-      searchDom(element.childNodes[i]);
+      search(element.childNodes[i]);
     }
   }
 
-   searchDom(document.body);
+   search(document.body);
    return results;
 };
